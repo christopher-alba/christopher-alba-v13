@@ -1,0 +1,99 @@
+.container {
+  max-width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.landing {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #1a1a1a;
+  color: white;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  z-index: 0;
+}
+
+/* left content */
+.left-content-wrapper {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.left-content {
+  margin: 0 0 50px 50px;
+}
+
+/* Ribbon */
+.ribbon {
+  background: white;
+  color: black;
+  padding: 20px 10px;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  height: 20vh;
+  width: 80px;
+}
+
+.ribbon-content {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.code-icon {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.job-title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 3rem;
+  margin: 0;
+  line-height: 1;
+  font-family: "Tilt Warp", sans-serif;
+}
+
+/* Main Text */
+.main-text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+  max-width: 1000px;
+  padding-bottom: 100px;
+}
+
+.main-text h2 {
+  font-family: "Tilt Warp", sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Learn More */
+.learn-more {
+  position: absolute;
+  bottom: 50px;
+  font-size: 14px;
+  color: #888;
+  cursor: pointer;
+}
+
+.arrow {
+  margin-left: 4px;
+}

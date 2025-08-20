@@ -1,0 +1,34 @@
+/* Side Navigation */
+.side-nav {
+  position: absolute;
+  top: 100px;
+  right: 30px;
+  color: white;
+  background: #1a1a1a;
+  z-index: 100;
+}
+
+.side-nav.fixed {
+  position: fixed;
+  top: 30px; /* adjust if needed */
+  right: 30px;
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  text-align: right;
+}
+
+.side-nav li {
+  margin: 6px 0;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.side-nav li:first-child {
+  font-weight: bold;
+  opacity: 1;
+}
