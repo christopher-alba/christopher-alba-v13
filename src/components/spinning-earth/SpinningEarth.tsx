@@ -8,17 +8,17 @@ const Globe = () => {
   const svgRef = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
-    if (!worldData) return;
-    if (!svgRef.current) return;
+    if (!worldData || !svgRef.current) return;
 
     const svg = d3.select(svgRef.current);
     svg.selectAll("*").remove();
 
-    const width = 800;
-    const height = 600;
+    const container = svgRef.current.parentElement;
+    let width = container?.clientWidth || 800;
+    let height = container?.clientHeight || 600;
 
-    const baseScale = 250;
-    const hoverScale = 300;
+    const baseScale = Math.min(width, height) / 2.5; // responsive scale
+    const hoverScale = baseScale * 1.2;
 
     const projection = d3
       .geoOrthographic()
@@ -30,20 +30,18 @@ const Globe = () => {
     const countries = feature(
       worldData as unknown as Topology,
       (worldData as any).objects.countries
-    ) as unknown as GeoJSON.FeatureCollection<
-      GeoJSON.Geometry,
-      GeoJSON.GeoJsonProperties
-    >;
+    ) as unknown as GeoJSON.FeatureCollection;
 
     // Sphere
     svg
       .append("path")
       .datum({ type: "Sphere" })
       .attr("d", path as any)
-      .attr("fill", "transparent")
-      .attr("stroke", "rgba(255,255,255,0.3)");
+      .attr("fill", "#1a1a1a")
+      .attr("stroke", "rgba(255,255,255,0.3)")
+      .attr("stroke-width", 0.5);
 
-    // Countries, NZ in green
+    // Countries
     svg
       .selectAll("path.country")
       .data(countries.features)
@@ -51,9 +49,9 @@ const Globe = () => {
       .append("path")
       .attr("class", "country")
       .attr("d", path as any)
-      .attr("fill", (d: any) => (d.id === "NZ" ? "green" : "transparent"))
+      .attr("fill", (d: any) => (d.id === "NZ" ? "green" : "#1a1a1a"))
       .attr("stroke", "white")
-      .attr("stroke-width", 1);
+      .attr("stroke-width", 0.5);
 
     let rotate: [number, number, number] = [0, 0, 0];
 
@@ -71,7 +69,7 @@ const Globe = () => {
     // Rotation animation
     let animationId: number;
     const rotateGlobe = () => {
-      rotate[0] += 0.2;
+      rotate[0] += 0.1;
       projection.rotate(rotate);
       svg.selectAll("path").attr("d", path as any);
 
@@ -104,16 +102,36 @@ const Globe = () => {
           });
       });
 
-    return () => cancelAnimationFrame(animationId);
+    // Handle window resize
+    const handleResize = () => {
+      width = container?.clientWidth || 800;
+      height = container?.clientHeight || 600;
+
+      projection
+        .translate([width / 2, height / 2])
+        .scale(Math.min(width, height) / 2.5);
+
+      svg.attr("viewBox", `0 0 ${width} ${height}`);
+      svg.selectAll("path").attr("d", path as any);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
-    <div className="earth">
+    <div className="earth" style={{ width: "100%", height: "100vh" }}>
       <svg
         ref={svgRef}
-        width={800}
-        height={600}
-        style={{ cursor: "default" }} // default
+        width="100%"
+        height="100%"
+        preserveAspectRatio="xMidYMid meet"
+        style={{ cursor: "default", zIndex: 9000, position: "relative" }}
         onMouseEnter={(e) => (e.currentTarget.style.cursor = "pointer")}
         onMouseLeave={(e) => (e.currentTarget.style.cursor = "default")}
       ></svg>

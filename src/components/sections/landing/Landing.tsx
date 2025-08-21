@@ -1,3 +1,4 @@
+import ShootingStars from "../../shooting-stars/ShootingStars";
 import EarthRipples3D from "../../spinning-earth/SpinningEarth";
 import "./Landing.css";
 
@@ -33,7 +34,7 @@ export default function LandingSection() {
         <div className="learn-more">
           Learn More <span className="arrow">↓</span>
         </div>
-
+        <ShootingStars />
         <EarthRipples3D />
       </div>
     </section>
