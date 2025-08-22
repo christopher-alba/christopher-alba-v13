@@ -53,14 +53,7 @@ export default function SkillsServices() {
         </div>
       </div>
 
-      {/* Right side generalist text */}
-      <div className="skills-generalist">
-        A generalist <br />
-        that can do <br />
-        frontend and <br />
-        backend <br />
-        engineering.
-      </div>
+     
     </section>
   );
 }

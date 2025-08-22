@@ -7,7 +7,7 @@
 }
 
 .about-image {
-  background: url("../../../assets/grad-photo-web.png") center/cover no-repeat, rgb(48, 65, 90);
+  background: url("../../../assets/grad-photo-web.png") center/cover no-repeat, #FEE2E0;
   width: 40%;
   height: 100%;
   position: absolute;
@@ -22,13 +22,13 @@
   border-bottom-left-radius: 100px;
   padding: 3rem 0;
   padding-left: 5rem;
-  width: 60%;
+  width: 70%;
   margin-left: auto;
-  margin-right: 10%;
+  padding-right: 10%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: white;
+  background: var(--background-light);
   position: relative;
   z-index: 1;
   min-height: 100vh;
@@ -56,7 +56,7 @@
   display: flex;
   text-align: right;
   margin: 0;
-  color: #1a1a1a;
+  color: var(--background-dark);
   font-family: "Tilt Warp", sans-serif;
 }
 

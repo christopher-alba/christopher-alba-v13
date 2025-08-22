@@ -9,9 +9,9 @@
 /* Background panels */
 .skills-bg-dark {
   position: relative;
+  box-sizing: border-box;
   width: 60%;
-  background: #262626;
-  border-top-right-radius: 100px;
+  background: var(--background-dark);
   border-bottom-right-radius: 100px;
   left: 0;
   top: 0;
@@ -23,9 +23,10 @@
 
 .skills-bg-blue {
   position: absolute;
-  width: 35%;
+  width: 60%;
   background: url("../../../assets/skills-bg.jpg") no-repeat center center, blue;
   background-size: cover;
+  background-position: center;
   right: 0;
   top: 0;
   z-index: 0;
@@ -45,7 +46,7 @@
   height: 100%;
   box-sizing: border-box;
   text-align: right;
-  color: white;
+  color: var(--background-light);
   font-size: 40px;
   font-weight: 700;
   line-height: 1.4;
@@ -53,7 +54,7 @@
 
 .skills-title {
   position: relative;
-  color: white;
+  color: var(--background-light);
   font-size: 64px;
   font-weight: 700;
   font-family: "Tilt Warp", sans-serif;
@@ -63,7 +64,7 @@
 
 .skills-content {
   position: relative;
-  color: white;
+  color: var(--background-light);
   width: 70%;
 }
 

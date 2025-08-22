@@ -4,7 +4,7 @@
   top: 100px;
   right: 0px;
   color: white;
-  background: #1a1a1a;
+  background: var(--background-dark);
   padding: 15px;
   z-index: 100;
   border-top-left-radius: 10px;
