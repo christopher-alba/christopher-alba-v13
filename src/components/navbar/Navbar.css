@@ -2,23 +2,26 @@
 .side-nav {
   position: absolute;
   top: 100px;
-  right: 30px;
+  right: 0px;
   color: white;
   background: #1a1a1a;
+  padding: 15px;
   z-index: 100;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .side-nav.fixed {
   position: fixed;
   top: 30px; /* adjust if needed */
-  right: 30px;
+  right: 0px;
 }
 
 .side-nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 12px;
+  font-size: 0.5rem;
   text-align: right;
 }
 

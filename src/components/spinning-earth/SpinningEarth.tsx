@@ -18,7 +18,7 @@ const Globe = () => {
     let height = container?.clientHeight || 600;
 
     const baseScale = Math.min(width, height) / 2.5; // responsive scale
-    const hoverScale = baseScale * 1.2;
+    const hoverScale = baseScale * 1.1;
 
     const projection = d3
       .geoOrthographic()
@@ -125,7 +125,7 @@ const Globe = () => {
   }, []);
 
   return (
-    <div className="earth" style={{ width: "100%", height: "100vh" }}>
+    <div className="earth" style={{ width: "100%", height: "100vh", position: "absolute", top: "10rem" }}>
       <svg
         ref={svgRef}
         width="100%"

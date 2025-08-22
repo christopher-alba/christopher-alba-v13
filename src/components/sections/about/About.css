@@ -1,0 +1,74 @@
+.about {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  position: relative;
+}
+
+.about-image {
+  background: url("../../../assets/grad-photo-web.png") center/cover no-repeat, rgb(48, 65, 90);
+  width: 40%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 0;
+  top: 0;
+  background-position: center;
+  background-size: cover;
+}
+
+.about-content {
+  border-bottom-left-radius: 100px;
+  padding: 3rem 0;
+  padding-left: 5rem;
+  width: 60%;
+  margin-left: auto;
+  margin-right: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: white;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.about-text-container {
+    margin-right: 10rem;
+}
+
+.about-inner-container {
+    display: flex;
+}
+.about-job {
+  font-size: 0.85rem;
+  color: gray;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.about-title {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  display: flex;
+  text-align: right;
+  margin: 0;
+  color: #1a1a1a;
+  font-family: "Tilt Warp", sans-serif;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  color: #222;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+}
+
+.about-text.secondary {
+  color: #888;
+  font-size: 0.9rem;
+}
