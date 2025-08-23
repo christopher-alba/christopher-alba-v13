@@ -1,0 +1,75 @@
+.tech-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  font-weight: 200;
+  position: relative;
+  min-height: 100vh;
+  background:  url("src/assets/tech-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale();
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  width: 75%;
+  margin-left: auto;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  overflow:hidden
+}
+
+.tech-title-main {
+  font-size: 5rem;
+  font-family: "Tilt Warp", sans-serif;
+  margin: 0;
+  line-height: 5rem;
+}
+
+.usual-tech-content {
+  position: relative;
+  padding: 5rem 5rem;
+  padding-right: 10%;
+  background: var(--background-light)
+}
+
+.usual-tech-content li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 800;
+}
+.star {
+  font-size: 1.25rem;
+}
+
+.honorable-mentions {
+  position: relative;
+  background: var(--background-light);
+  color: black;
+  padding: 5rem;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 5px;
+}
+.honorable-mentions .star {
+  font-size: 1.25rem;
+}

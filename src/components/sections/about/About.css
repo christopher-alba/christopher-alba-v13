@@ -25,13 +25,15 @@
   width: 70%;
   margin-left: auto;
   padding-right: 10%;
+  padding-top: 10rem;
+  padding-bottom: 10rem;;
   display: flex;
   flex-direction: row;
   align-items: center;
   background: var(--background-light);
   position: relative;
   z-index: 1;
-  min-height: 100vh;
+  min-height: fit-content;
   box-sizing: border-box;
 }
 

@@ -37,13 +37,9 @@ const Globe = () => {
       .append("path")
       .datum({ type: "Sphere" })
       .attr("d", path as any)
-      .attr("fill", "#172c49") // soft blue (Tailwind sky-100)
-      .attr("stroke-width", 0.8);
-
-    // Countries
-    const colorScale = d3
-      .scaleOrdinal<string>()
-      .range(["#30684c", "#49614f", "#678a73", "#406357", "#50645f"]); // pastel palette
+      .attr("fill", "var(--background-dark)") // soft blue (Tailwind sky-100)
+      .attr("stroke", "var(--background-light)")
+      .attr("stroke-width", 0.1);
 
     svg
       .selectAll("path.country")
@@ -52,10 +48,13 @@ const Globe = () => {
       .append("path")
       .attr("class", "country")
       .attr("d", path as any)
-      .attr("fill", (d: any) => (d.id === "NZ" ? "#86efac" : colorScale(d.id)))
-      .attr("stroke", (d: any) => (d.id === "NZ" ? "#86efac" : colorScale(d.id))) // slate border
+      .attr("fill", (d: any) =>
+        d.id === "NZ" ? "white" : "var(--background-dark)"
+      )
+      .attr("stroke", (d: any) =>
+        d.id === "NZ" ? "white" : "var(--background-light)"
+      ) // slate border
       .attr("stroke-width", 0.3)
-      .attr("stroke-dasharray", "2,2") // dashed border
       .attr("stroke-opacity", 0.5);
 
     let rotate: [number, number, number] = [0, 0, 0];
@@ -85,11 +84,6 @@ const Globe = () => {
     // Hover scaling with smooth transition
     svg
       .on("mouseenter", () => {
-        svg
-          .selectAll("path.country")
-          .transition()
-          .duration(500)
-          .attr("fill", (d: any) => (d.id === "NZ" ? "#4ade80" : "#5B75A5"));
         d3.transition()
           .duration(500)
           .tween("scale", () => {
@@ -101,13 +95,6 @@ const Globe = () => {
           });
       })
       .on("mouseleave", () => {
-        svg
-          .selectAll("path.country")
-          .transition()
-          .duration(500)
-          .attr("fill", (d: any) =>
-            d.id === "NZ" ? "#86efac" : colorScale(d.id)
-          );
         d3.transition()
           .duration(500)
           .tween("scale", () => {
