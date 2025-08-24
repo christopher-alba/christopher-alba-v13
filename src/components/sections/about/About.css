@@ -1,76 +1,77 @@
 .about {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background: #fff;
-  position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background: #fff;
+	position: relative;
 }
 
 .about-image {
-  background: url("../../../assets/grad-photo-web.png") center/cover no-repeat, #FEE2E0;
-  width: 40%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  z-index: 0;
-  top: 0;
-  background-position: center;
-  background-size: cover;
+	background: url("../../../assets/grad-photo-web.png") center/cover no-repeat,
+		#fee2e0;
+	width: 30%;
+	height: 80vh;
+	position: relative;
+	left: 0;
+	z-index: 0;
+	top: 0;
+	background-position: center;
+	background-size: cover;
 }
 
 .about-content {
-  border-bottom-left-radius: 100px;
-  padding: 3rem 0;
-  padding-left: 5rem;
-  width: 70%;
-  margin-left: auto;
-  padding-right: 10%;
-  padding-top: 10rem;
-  padding-bottom: 10rem;;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: var(--background-light);
-  position: relative;
-  z-index: 1;
-  min-height: fit-content;
-  box-sizing: border-box;
+	padding: 3rem 0;
+	padding-left: 5rem;
+	width: 70%;
+	border-left: 50px solid var(--tertiary-color);
+	margin-left: auto;
+	padding-right: 10%;
+	padding-top: 10rem;
+	padding-bottom: 10rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background: var(--background-light);
+	position: relative;
+	z-index: 1;
+	min-height: fit-content;
+	box-sizing: border-box;
 }
 
 .about-text-container {
-    margin-right: 10rem;
+	margin-right: 10rem;
 }
 
 .about-inner-container {
-    display: flex;
+	display: flex;
 }
 .about-job {
-  font-size: 0.85rem;
-  color: gray;
-  margin-bottom: 1rem;
-  font-weight: bold;
+	font-size: 0.85rem;
+	color: gray;
+	margin-bottom: 1rem;
+	font-weight: bold;
 }
 
 .about-title {
-  font-size: 5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  display: flex;
-  text-align: right;
-  margin: 0;
-  color: var(--background-dark);
-  font-family: "Tilt Warp", sans-serif;
+	font-size: 5rem;
+	font-weight: 700;
+	line-height: 1.2;
+	display: flex;
+	text-align: right;
+	margin: 0;
+	color: var(--background-dark);
+	font-family: "Tilt Warp", sans-serif;
 }
 
 .about-text {
-  font-size: 1.2rem;
-  color: #222;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-  font-family: "Inter", sans-serif;
+	font-size: 1.2rem;
+	color: #222;
+	margin-bottom: 1.5rem;
+	line-height: 1.6;
+	font-family: "Inter", sans-serif;
 }
 
 .about-text.secondary {
-  color: #888;
-  font-size: 0.9rem;
+	color: #888;
+	font-size: 0.9rem;
 }
